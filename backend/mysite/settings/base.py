@@ -12,10 +12,19 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+from pathlib import Path
+
+# Load .env file
+env_path = Path(".") / ".env"
+load_dotenv(dotenv_path=env_path)
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
+# Private keys
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -138,20 +147,12 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, "static"),
-]
-
-# ManifestStaticFilesStorage is recommended in production, to prevent outdated
-# Javascript / CSS assets being served from cache (e.g. after a Wagtail upgrade).
-# See https://docs.djangoproject.com/en/3.1/ref/contrib/staticfiles/#manifeststaticfilesstorage
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
-
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATIC_URL = "/static/"
-
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+STATIC_ROOT = BASE_DIR + "static"
+
+
 MEDIA_URL = "/media/"
+STATIC_URL = "/static/"
 
 
 # Wagtail settings
