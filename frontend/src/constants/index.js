@@ -1,2 +1,2 @@
 //API.js
-export const API_URL = "http://caecus.pythonanywhere.com/api/v2/"
+export const API_URL = "https://caecus.pythonanywhere.com/api/v2/"
