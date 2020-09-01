@@ -1,0 +1,668 @@
+// NOTE:: This is the core HTML styles that can be found on the Style Guide Page of the site.
+
+/*=======================
+       Imports
+========================*/
+@import "mixins";
+@import "defaults";
+@import "fonts";
+
+//
+// Core HTML
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $bodyCopy;
+    font-weight: 400;
+    color: $text-gray;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin-top: 0px;
+    background: white;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+* html .clearfix {
+    zoom: 1;
+}
+
+/* IE6 */
+*:first-child+html .clearfix {
+    zoom: 1;
+}
+
+/* IE7 */
+
+// Headers
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $headline;
+    font-weight: 300;
+    margin: 0;
+    line-height: normal;
+}
+
+h1 {
+    @include font-size(20px);
+    line-height: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $cp1;
+}
+
+h2 {
+    @include font-size(25px);
+    font-weight: 900;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid $cp1;
+    text-transform: uppercase;
+    color: $cp1;
+}
+
+h3 {
+    @include font-size(20px);
+    font-weight: 900;
+    color: $cp2;
+}
+
+h4 {
+    @include font-size(31.25px);
+    line-height: 38px;
+    font-weight: 500;
+    color: $cp4;
+}
+
+h5 {
+    @include font-size(25px);
+    line-height: 32px;
+    font-weight: 500;
+    color: $cp1;
+    text-transform: uppercase;
+}
+
+h6 {
+    @include font-size(20px);
+    line-height: 27px;
+    text-transform: uppercase;
+    color: $cp2;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none;
+}
+
+hr {
+    border-color: $light;
+    padding: 0;
+    margin: 20px 0 40px;
+}
+
+[class^="fa-"] {
+    font-family: fontawesome;
+}
+
+//
+// Color Palette
+
+.palette {
+    display: flex;
+    flex-flow: row wrap;
+    border: solid $light;
+    border-width: 1px 1px 0 0;
+
+    dt {
+        flex-basis: 20%;
+        padding: 5px 20px;
+        background: $light;
+        text-align: right;
+        border-radius: 0;
+        color: #fff;
+        border: solid $light;
+        border-width: 1px 1px 0 0;
+    }
+
+    dd {
+        flex-basis: 70%;
+        flex-grow: 1;
+        margin: 0;
+        padding: 5px 20px;
+        border-bottom: 1px solid $light;
+        border-left: 0;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .cp1 {
+        background-color: $cp1;
+    }
+
+    .cp2 {
+        background-color: $cp2;
+    }
+
+    .cp3 {
+        background-color: $cp3;
+    }
+
+    .cp4 {
+        background-color: $cp4;
+    }
+
+    .cp5 {
+        background-color: $cp5;
+        color: $text-gray;
+    }
+}
+
+// Layout fixes
+.col {
+    padding: 0;
+}
+
+.col:last-of-type {
+    margin: 0;
+}
+
+.col-md-6 {
+    max-width: 49%;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: flex-start;
+}
+
+
+//
+// Images
+img,
+figure,
+picture {
+    width: 100%;
+    height: auto;
+    border-radius: $radius;
+    position: relative;
+
+    &.left {
+        width: auto;
+        float: left;
+        margin: 0 20px 2px 0;
+    }
+
+    &.right {
+        width: auto;
+        float: right;
+        margin: 0 0 2px 20px;
+    }
+
+    &.full-width {
+        margin: 0 0 20px 0;
+    }
+
+    figcaption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-bottom-left-radius: $radius;
+        border-bottom-right-radius: $radius;
+        background: $odd;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-style: italic;
+    }
+}
+
+figure.full-width {
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    padding-bottom: 2px;
+}
+
+//
+// Responsive video
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+//
+// Paragraph Styles
+div,
+p {
+    color: $text-gray;
+    @include font-size(17px);
+    margin: 0 0 0.5em;
+    line-height: 30px;
+    font-weight: 400;
+    font-family: $bodyCopy;
+
+    &:last-child {
+        margin-bottom: 1em;
+    }
+}
+
+i,
+em {
+    font-style: italic;
+    font-weight: 300;
+}
+
+b,
+strong {
+    font-weight: 800;
+    color: $cp4;
+}
+
+a {
+    text-decoration: none;
+    @include transition(color 0.3s ease);
+    color: $text-gray;
+    display: inline-block;
+
+    &:hover {
+        color: $cp5;
+    }
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+blockquote {
+    padding: 10px 20px;
+    background: white;
+    border-left: 5px solid $cp2;
+    position: relative;
+
+    @include font-size(18px);
+    color: $cp3;
+
+    &::before {
+        content: open-quote;
+        position: absolute;
+        transform: translateY(-50%);
+        left: 0;
+        top: 50%;
+        background: white;
+        height: 40px;
+        width: 38px;
+        line-height: 92px;
+        color: $cp2;
+        margin-left: -20px;
+        @include font-size(90px);
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.rounded {
+    @include border-radius(100%);
+}
+
+.footnote,
+.footnote * {
+    @include font-size(16px);
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+button,
+.button,
+.btn-primary,
+.btn,
+.btn-info,
+.btn-default {
+    max-width: 250px;
+    display: block;
+    text-align: left;
+    padding: 10px 20px;
+    width: 100%;
+    background: $odd;
+    text-transform: uppercase;
+    color: $cp2;
+    border: none;
+    border-bottom: 13px solid $cp2;
+    @include font-size(18px);
+    border-radius: 0;
+
+    &:hover,
+    &.hover {
+        border-color: $cp3;
+        color: $cp3;
+        background: $odd;
+    }
+
+    &:active,
+    &.active,
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active {
+        border-color: $cp4;
+        color: $cp4;
+        background: $odd;
+    }
+
+    &:not(:disabled):not(.disabled).active:focus,
+    &:not(:disabled):not(.disabled):active:focus {
+        box-shadow: none;
+    }
+}
+
+.show>.btn-primary.dropdown-toggle {
+    border-color: $cp4;
+    color: $cp4;
+    background: $odd;
+    outline: none;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.btn-outline {
+    border: 2px solid $cp1;
+    border-bottom: 13px solid $cp1;
+    background: transparent;
+    color: $cp1;
+
+    &:hover,
+    &:active {
+        background: transparent !important;
+    }
+}
+
+//
+// Lists
+// Ordered List (Numbered)
+main ol {
+    list-style-type: none;
+    margin: 0;
+    margin-left: 0;
+    padding: 0;
+    counter-reset: li-counter;
+}
+
+main ol>li {
+    position: relative;
+    margin-bottom: 0;
+    padding: 5px 20px 5px 35px;
+}
+
+main ol>li:before {
+    position: absolute;
+    color: $cp2;
+    font-weight: 800;
+    top: 5px;
+    left: 0;
+    font-family: $bodyCopy;
+    content: counter(li-counter) ".";
+    counter-increment: li-counter;
+}
+
+// Unordered list (Bullets)
+main ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+        margin-bottom: 0px;
+        padding-left: 25px;
+        position: relative;
+        line-height: 1.6em;
+        margin-bottom: 10px;
+        list-style-type: none;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: 0;
+            background: $cp1;
+            border-radius: 0;
+            height: 15px;
+            width: 15px;
+        }
+    }
+}
+
+// Definition list (Title & Discription)
+main dl {
+    dt {
+        color: $cp2;
+        font-weight: 800;
+        @include font-size(18px);
+    }
+
+    dd {
+        //background: lighten($cp1, 70%);
+        padding: 0 0 0 15px;
+        //border-bottom-left-radius: $radius;
+        //border-bottom-right-radius: $radius;
+        margin-bottom: 20px;
+        border-left: 4px solid $cp2;
+        @include font-size(17px);
+    }
+}
+
+//
+// Tables
+@media (max-width: 768px) {
+    table {
+        margin-bottom: 20px;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        display: block;
+        position: relative;
+        padding: 1.2em 0;
+
+        &:first-of-type {
+            border-top: 1px solid #ccc;
+        }
+    }
+
+    td {
+        display: block;
+
+        &:last-child:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        &:not(:first-child)::before {
+            content: attr(data-label) " ";
+            font-weight: bold;
+            color: $cp3;
+        }
+
+        &[data-label=":"]::before {
+            content: none;
+        }
+
+        &[data-label="PERCENT OF CLASS:"] {
+            text-align: left;
+            background: $cp2;
+            color: white;
+            padding: 13px !important;
+        }
+    }
+
+    tr {
+        padding: 0;
+    }
+
+    td,
+    th {
+        padding: 0.4em 0.6em;
+        vertical-align: top;
+        border: 1px solid #ccc;
+    }
+
+    th {
+        background: #e1e1e1;
+        font-weight: bold;
+    }
+
+    .table>thead>tr>th,
+    .table>tbody>tr>th,
+    .table>tfoot>tr>th,
+    .table>thead>tr>td,
+    .table>tbody>tr>td,
+    .table>tfoot>tr>td {
+        border: none;
+    }
+}
+
+.table-responsive>.table {
+    margin-bottom: 20px !important;
+    border: none;
+}
+
+.table-responsive {
+    border: none;
+}
+
+table {
+    border: none;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+table caption {
+    padding: 15px;
+    background: $cp4;
+    color: white;
+    caption-side: top;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+th {
+    padding: 10px 15px;
+    background: $cp3;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+}
+
+tr:hover {
+    background: lighten($odd, 20%);
+}
+
+tr:nth-child(even) {
+    background: $even;
+}
+
+tr:nth-child(odd) {
+    background: $odd;
+}
+
+td {
+    padding: 5px 15px;
+}
+
+//
+// Forms
+.form-group {
+    .form-control {
+        border-radius: $radius;
+        border: none;
+    }
+}
+
+
+
+//
+// Footer
+footer {
+    min-height: 100px;
+    padding: 20px 20px 50px;
+    background: $footer;
+    min-height: 100px;
+    box-shadow: 0 500px 0 500px $footer;
+
+    * {
+        color: white;
+    }
+
+    a {
+        color: lighten($cp3, 10%);
+
+        &:hover {
+            color: $cp1;
+
+            span {
+                color: $cp1;
+            }
+        }
+    }
+
+    a span {
+        color: lighten($cp3, 10%);
+    }
+}

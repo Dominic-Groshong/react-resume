@@ -1,0 +1,31 @@
+// Import external content
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap');
+//
+// Primary Colors
+$cp1: #0F75BC;
+$cp2: #000;
+$cp3: #0F75BC;
+$cp4: #0F75BC;
+$cp5: $cp2;
+
+//
+// Default Colors
+$light: #c4c4c4;
+$medium: #727272;
+$dark: #292929;
+$even: #fcfcfc;
+$odd: #f5f5f5;
+$text-gray: #666;
+
+$footer: $dark;
+
+//
+// Font Family
+$headline: 'Lato',
+sans-serif;
+$bodyCopy: 'Lato',
+sans-serif;
+
+// Radius options
+$radius: 4px;
+$full-radius: 100px;
